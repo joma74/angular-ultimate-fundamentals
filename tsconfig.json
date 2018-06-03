@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "checkJs": true,
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "noImplicitAny": true,
+    "pretty": true,
+    "sourceMap": true,
+    "lib": ["es6", "dom"],
+    "strictNullChecks": false
+  },
+  "compileOnSave": false,
+  "awesomeTypescriptLoaderOptions": {}
+}

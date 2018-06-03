@@ -1,10 +1,17 @@
 {
   "name": "angular-ultimate-fundamentals",
   "version": "0.0.1",
-  "description": "Replay after https://github.com/UltimateAngular/angular-fundamentals-src",
-  "main": "index.js",
+  "description":
+    "Replay after https://github.com/UltimateAngular/angular-fundamentals-src",
+  "main": "main",
   "repository": "https://github.com/joma74/angular-ultimate-fundamentals.git",
   "author": "joma74 <dev-mails@gmx.net>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@types/webpack": "3.8.11",
+    "@types/webpack-dev-server": "^2.9.4",
+    "json-server": "^0.13.0",
+    "typescript": "^2.9.1"
+  }
 }
