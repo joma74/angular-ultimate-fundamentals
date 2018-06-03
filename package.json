@@ -1,0 +1,10 @@
+{
+  "name": "angular-ultimate-fundamentals",
+  "version": "0.0.1",
+  "description": "Replay after https://github.com/UltimateAngular/angular-fundamentals-src",
+  "main": "index.js",
+  "repository": "https://github.com/joma74/angular-ultimate-fundamentals.git",
+  "author": "joma74 <dev-mails@gmx.net>",
+  "license": "MIT",
+  "private": false
+}
