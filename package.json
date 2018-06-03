@@ -8,10 +8,15 @@
   "author": "joma74 <dev-mails@gmx.net>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "code_frmt":
+      "./node_modules/.bin/prettier --config ${PWD}/.prettierrc --write './config/**/*.js' './src/**/*.ts'"
+  },
   "devDependencies": {
     "@types/webpack": "3.8.11",
     "@types/webpack-dev-server": "^2.9.4",
     "json-server": "^0.13.0",
+    "prettier": "^1.13.4",
     "typescript": "^2.9.1"
   }
 }
