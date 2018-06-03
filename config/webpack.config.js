@@ -1,8 +1,5 @@
 const path = require("path")
 const webpack = require("webpack")
-/**
- * @type {any}
- */
 const jsonServer = require("json-server")
 
 /**
