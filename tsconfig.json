@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "checkJs": true,
-    "target": "es5",
+    "declaration": true,
+    "declarationMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": ["es5", "es6", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
     "noEmitHelpers": true,
     "noImplicitAny": true,
     "pretty": true,
     "sourceMap": true,
-    "lib": ["es6", "dom"],
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5"
   },
   "compileOnSave": false,
   "awesomeTypescriptLoaderOptions": {}
