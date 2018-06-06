@@ -3,8 +3,6 @@
     "allowJs": true,
     "baseUrl": "./src",
     "checkJs": true,
-    "declaration": true,
-    "declarationMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es5", "es6", "dom"],
