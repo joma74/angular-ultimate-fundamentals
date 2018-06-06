@@ -1,32 +1,13 @@
+const helpers = require("./helpers")
 const path = require("path")
 const webpack = require("webpack")
-const jsonServer = require("json-server")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const helpers = require("./helpers")
 
 /**
  * Current Project Dir
  */
 const cpd = path.join(__dirname, "../")
-
-/**
- * @type {import("webpack-dev-server").Configuration}
- */
-const devServer = {
-  before(app) {
-    app.use("/api", jsonServer.router(cpd + "/db.json"))
-  },
-  contentBase: cpd,
-  compress: true,
-  historyApiFallback: true,
-  host: "0.0.0.0",
-  hot: true,
-  port: 4000,
-  stats: "minimal",
-  publicPath: "build",
-  watchContentBase: false,
-}
 
 /**
  * @type {import ("webpack").Node}
@@ -45,40 +26,6 @@ const webpackConfig = {
     polyfills: "./src/polyfills.ts",
     vendor: "src/vendor.ts",
     app: "src/main.ts",
-  },
-  output: {
-    path: helpers.root("dist"),
-    publicPath: "/",
-    filename: "[name].js",
-    chunkFilename: "[id].chunk.js",
-  },
-  devServer,
-  devtool: "source-map",
-  node,
-  plugins: [
-    // Workaround for angular/angular#11580
-    new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)@angular/,
-      helpers.root("./src"), // location of your src
-      {}, // a map of your routes
-    ),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ["app", "vendor", "polyfills"],
-    }),
-
-    new HtmlWebpackPlugin({
-      template: "src/index.html",
-    }),
-
-    new webpack.NamedModulesPlugin(),
-
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  resolve: {
-    extensions: [".ts", ".js"],
-    modules: ["node_modules", cpd],
   },
   module: {
     rules: [
@@ -114,6 +61,30 @@ const webpackConfig = {
         use: "raw-loader",
       },
     ],
+  },
+  node,
+  plugins: [
+    // Workaround for angular/angular#11580
+    new webpack.ContextReplacementPlugin(
+      // The (\\|\/) piece accounts for path separators in *nix and Windows
+      /angular(\\|\/)core(\\|\/)@angular/,
+      helpers.root("./src"), // location of your src
+      {}, // a map of your routes
+    ),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ["app", "vendor", "polyfills"],
+    }),
+
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+    }),
+
+    new webpack.NamedModulesPlugin(),
+  ],
+  resolve: {
+    extensions: [".ts", ".js"],
+    modules: ["node_modules", cpd],
   },
 }
 
