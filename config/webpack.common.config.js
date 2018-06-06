@@ -51,8 +51,8 @@ const webpackConfig = {
         test: /\.css$/,
         exclude: helpers.root("src", "app"),
         use: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: "css-loader?sourceMap",
+          fallback: "style-loader",
+          use: "css-loader?sourceMap",
         }),
       },
       {
