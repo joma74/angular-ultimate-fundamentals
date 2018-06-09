@@ -15,6 +15,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
   },
-  "compileOnSave": false,
-  "awesomeTypescriptLoaderOptions": {}
+  "exclude": ["build", "dist", "node_modules", "target"],
+  "types": ["types/**/*"],
+  "compileOnSave": false
 }
