@@ -4,6 +4,7 @@ const jsonServer = require("json-server")
 const path = require("path")
 const webpack = require("webpack")
 const webpackMerge = require("webpack-merge")
+const { CheckerPlugin } = require("awesome-typescript-loader")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 /**
@@ -25,7 +26,6 @@ const devServer = {
   hot: true,
   port: 4000,
   stats: "minimal",
-  publicPath: "build",
   watchContentBase: false,
 }
 
@@ -39,6 +39,8 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: "[id].chunk.js",
   },
   plugins: [
+    new CheckerPlugin(),
+
     new ExtractTextPlugin("[name].css"),
 
     new webpack.HotModuleReplacementPlugin(),
