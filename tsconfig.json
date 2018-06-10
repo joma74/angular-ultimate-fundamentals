@@ -13,6 +13,7 @@
     "sourceMap": true,
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true,
+    "maxNodeModuleJsDepth": 0,
     "target": "es5"
   },
   "exclude": ["build", "dist", "node_modules", "target"],
