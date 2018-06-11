@@ -28,4 +28,4 @@ TS2304: Cannot find name 'Set'.
 See https://github.com/blacksonic/angular2-aot-webpack/issues/64#issuecomment-284738991
 
 G) No typings for karma 2
-Step back to karam 1.7.3 both in library and as @types
+Step back to karma 1.7.3 both in library and as @types

@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "checkJs": false,
     "moduleResolution": "node",
     "strict": true,
     "target": "es5",
     "lib": ["es2015", "dom"],
     "sourceMap": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "maxNodeModuleJsDepth": 2
   },
   "typeAcquisition": {

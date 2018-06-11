@@ -28,8 +28,10 @@ const devServer = {
   stats: "minimal",
   watchContentBase: false,
 }
-
-module.exports = webpackMerge(commonConfig, {
+/**
+ * @type {import ("webpack").Configuration}
+ */
+const devConfig = {
   devtool: "cheap-module-eval-source-map",
   devServer,
   output: {
@@ -45,4 +47,6 @@ module.exports = webpackMerge(commonConfig, {
 
     new webpack.HotModuleReplacementPlugin(),
   ],
-})
+}
+
+module.exports = webpackMerge(commonConfig, devConfig)
