@@ -22,6 +22,7 @@ module.exports = function(config) {
       "./config/karma.testloader.webpack.js": ["webpack", "sourcemap"],
     },
 
+    // @ts-ignore
     webpack: webpackConfig,
 
     webpackMiddleware: {

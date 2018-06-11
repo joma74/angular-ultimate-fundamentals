@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "es5",
+    "lib": ["es2015", "dom"],
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "maxNodeModuleJsDepth": 2
+  },
+  "typeAcquisition": {
+    "include": ["../types/**/*"],
+    "enable": false
+  }
+}
