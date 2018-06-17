@@ -8,6 +8,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "tsc:validate": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true  | tee target/tsc.validate.log; echo $?",
+    "tsc:trace": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true --traceResolution true  | tee target/tsc.trace.log; echo $?",
+    "tsc:listFiles": "node_modules/typescript/bin/tsc --project ./jsconfig.json --noEmit true --listFiles  | tee target/tsc.listFiles.log; echo $?",
     "code_frmt": "./node_modules/.bin/prettier --config ${PWD}/.prettierrc --write './config/**/*.js' './src/**/*.ts'",
     "test:once": "karma start karma.config.js",
     "test:watch": "karma start karma.config.js --auto-watch --no-single-run",
