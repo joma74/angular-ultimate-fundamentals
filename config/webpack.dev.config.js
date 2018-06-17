@@ -17,6 +17,7 @@ const cpd = path.join(__dirname, "../")
  */
 const devServer = {
   before(app) {
+    // @ts-ignore
     app.use("/api", jsonServer.router(cpd + "/db.json"))
   },
   contentBase: cpd,
