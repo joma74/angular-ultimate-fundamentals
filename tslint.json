@@ -30,11 +30,7 @@
 		"no-irregular-whitespace": true,
 		"no-regex-spaces": 1,
 		"no-sparse-arrays": true,
-		"no-submodule-imports": [
-			true,
-			"@angular/platform-browser",
-			"@angular/core/testing"
-		],
+		"no-submodule-imports": false,
 		"no-unexpected-multiline": true,
 		"no-unsafe-finally": true,
 		"no-unused-expression": true,
