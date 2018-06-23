@@ -1,5 +1,5 @@
 {
-	"extends": ["tslint-eslint-rules", "tslint-config-prettier"],
+	"extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
 	"rules": {
 		"array-bracket-spacing": [true, "never"],
 		"block-spacing": [true, "always"],
@@ -30,6 +30,11 @@
 		"no-irregular-whitespace": true,
 		"no-regex-spaces": 1,
 		"no-sparse-arrays": true,
+		"no-submodule-imports": [
+			true,
+			"@angular/platform-browser",
+			"@angular/core/testing"
+		],
 		"no-unexpected-multiline": true,
 		"no-unsafe-finally": true,
 		"no-unused-expression": true,
