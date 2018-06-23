@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"_lint": "tslint --project '.' src/**/*.ts",
+		"_lint": "tslint --project '.' 'src/**/*.ts'",
 		"lint": "yarn run _lint --fix",
 		"tsc:validate": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true  | tee target/tsc.validate.log; echo $?",
 		"tsc:trace": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true --traceResolution true  | tee target/tsc.trace.log; echo $?",
