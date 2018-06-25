@@ -48,6 +48,12 @@ const webpackConfig = {
 				use: "file-loader?name=assets/[name].[hash].[ext]",
 			},
 			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				include: helpers.root("src", "app"),
+				loaders: ["raw-loader", "sass-loader"], // sass-loader not scss-loader
+			},
+			{
 				test: /\.css$/,
 				exclude: helpers.root("src", "app"),
 				use: ExtractTextPlugin.extract({
