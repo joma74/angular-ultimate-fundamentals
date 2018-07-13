@@ -11,6 +11,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
  * Current Project Dir
  */
 const cpd = path.join(__dirname, "../")
+const contentNotFromWebpackIsServedFrom = path.join(__dirname, "../src/")
+const publicPath = "/"
 
 /**
  * @type {import("webpack-dev-server").Configuration}
@@ -20,7 +22,7 @@ const devServer = {
     // @ts-ignore
     app.use("/api", jsonServer.router(cpd + "/db.json"))
   },
-  contentBase: cpd,
+  contentBase: contentNotFromWebpackIsServedFrom,
   compress: true,
   historyApiFallback: true,
   host: "0.0.0.0",
@@ -37,7 +39,7 @@ const devConfig = {
   devServer,
   output: {
     path: helpers.root("dist"),
-    publicPath: "/",
+    publicPath,
     filename: "[name].js",
     chunkFilename: "[id].chunk.js",
   },
