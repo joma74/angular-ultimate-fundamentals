@@ -6,48 +6,49 @@ var webpackConfig = require("./webpack.test.config")
  * @param  {import ("karma").Config} config
  */
 module.exports = function(config) {
-  /**
-   * @type  {import ("karma").ConfigOptions}
-   */
-  var _config = {
-    basePath: "",
+	/**
+	 * @type  {import ("karma").ConfigOptions}
+	 */
+	var _config = {
+		autoWatch: false,
+		basePath: "",
+		browsers: ["Chrome"],
+		colors: true,
 
-    frameworks: ["jasmine"],
+		frameworks: ["jasmine"],
 
-    files: [
-      { pattern: "./config/karma.testloader.webpack.js", watched: false },
-    ],
+		failOnEmptyTestSuite: false,
 
-    preprocessors: {
-      "./config/karma.testloader.webpack.js": ["webpack", "sourcemap"],
-    },
+		files: [
+			{ pattern: "./config/karma.testloader.webpack.js", watched: false },
+		],
 
-    // @ts-ignore
-    webpack: webpackConfig,
+		logLevel: config.LOG_INFO,
+		mime: { "text/x-typescript": ["ts", "tsx"] },
 
-    webpackMiddleware: {
-      stats: "errors-only",
-    },
+		preprocessors: {
+			"./config/karma.testloader.webpack.js": ["webpack", "sourcemap"],
+		},
 
-    /**
-     * @type {import("webpack-dev-server").Configuration}
-     */
-    // @ts-ignore
-    webpackServer: {
-      noInfo: true,
-    },
+		// @ts-ignore
+		webpack: webpackConfig,
 
-    mime: { "text/x-typescript": ["ts", "tsx"] },
+		webpackMiddleware: {
+			stats: "errors-only",
+		},
 
-    reporters: ["progress", "kjhtml"],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: false,
-    browsers: ["Chrome"],
-    singleRun: true,
-    failOnEmptyTestSuite: false,
-  }
+		/**
+		 * @type {import("webpack-dev-server").Configuration}
+		 */
+		// @ts-ignore
+		webpackServer: {
+			noInfo: true,
+		},
 
-  config.set(_config)
+		port: 9876,
+		reporters: ["progress", "kjhtml"],
+		singleRun: true,
+	}
+
+	config.set(_config)
 }
