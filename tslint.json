@@ -1,5 +1,8 @@
 {
 	"extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
+	"jsRules": {
+		"variable-name": [true, "check-format", "allow-leading-underscore"]
+	},
 	"rules": {
 		"array-bracket-spacing": [true, "never"],
 		"block-spacing": [true, "always"],

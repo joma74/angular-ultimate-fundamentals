@@ -29,3 +29,7 @@ See https://github.com/blacksonic/angular2-aot-webpack/issues/64#issuecomment-28
 
 G) No typings for karma 2
 Step back to karma 1.7.3 both in library and as @types
+
+H) Enable tslint of js in vscode
+
+One must do `"tslint.jsEnable": true`
