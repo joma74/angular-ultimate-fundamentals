@@ -1,6 +1,6 @@
-const extractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const helpers = require("./helpers")
-const htmlWebpackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path")
 const webpack = require("webpack")
 
@@ -56,7 +56,7 @@ const webpackConfig = {
 			{
 				exclude: helpers.root("src", "app"),
 				test: /\.css$/,
-				use: extractTextPlugin.extract({
+				use: ExtractTextPlugin.extract({
 					fallback: "style-loader",
 					use: "css-loader?sourceMap",
 				}),

@@ -1,11 +1,12 @@
 const commonConfig = require("./webpack.common.config")
 const helpers = require("./helpers")
+// @ts-ignore
 const jsonServer = require("json-server")
 const path = require("path")
 const webpack = require("webpack")
 const webpackMerge = require("webpack-merge")
 const { CheckerPlugin } = require("awesome-typescript-loader")
-const extractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 /**
  * Current Project Dir
@@ -46,7 +47,7 @@ const devConfig = {
 	plugins: [
 		new CheckerPlugin(),
 
-		new extractTextPlugin("[name].css"),
+		new ExtractTextPlugin("[name].css"),
 
 		new webpack.HotModuleReplacementPlugin(),
 	],

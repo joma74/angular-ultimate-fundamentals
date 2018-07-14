@@ -2,7 +2,7 @@ const commonConfig = require("./webpack.common.config")
 const helpers = require("./helpers")
 const webpack = require("webpack")
 const webpackMerge = require("webpack-merge")
-const extractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 const ENV = (process.env.NODE_ENV = process.env.ENV = "production")
 
@@ -24,7 +24,7 @@ module.exports = webpackMerge(commonConfig, {
 			},
 		}),
 
-		new extractTextPlugin("[name].[hash].css"),
+		new ExtractTextPlugin("[name].[hash].css"),
 
 		new webpack.DefinePlugin({
 			"process.env": {

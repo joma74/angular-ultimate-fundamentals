@@ -1,7 +1,12 @@
 {
 	"extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
 	"jsRules": {
-		"variable-name": [true, "check-format", "allow-leading-underscore"]
+		"variable-name": [
+			true,
+			"check-format",
+			"allow-leading-underscore",
+			"allow-pascal-case"
+		]
 	},
 	"rules": {
 		"array-bracket-spacing": [true, "never"],
