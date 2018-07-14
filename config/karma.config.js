@@ -1,3 +1,4 @@
+// @ts-ignore
 require("karma-jasmine-html-reporter")
 
 var webpackConfig = require("./webpack.test.config")
@@ -17,6 +18,7 @@ module.exports = function(config) {
 
 		frameworks: ["jasmine"],
 
+		// @ts-ignore
 		failOnEmptyTestSuite: false,
 
 		files: [
@@ -30,7 +32,6 @@ module.exports = function(config) {
 			"./config/karma.testloader.webpack.js": ["webpack", "sourcemap"],
 		},
 
-		// @ts-ignore
 		webpack: webpackConfig,
 
 		webpackMiddleware: {
@@ -40,7 +41,6 @@ module.exports = function(config) {
 		/**
 		 * @type {import("webpack-dev-server").Configuration}
 		 */
-		// @ts-ignore
 		webpackServer: {
 			noInfo: true,
 		},
