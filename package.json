@@ -10,7 +10,7 @@
 	"scripts": {
 		"_lint": "tslint --project '.' 'src/**/*.ts' './config/**/*.js'",
 		"lint": "yarn run _lint --fix",
-		"tsc:validate": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true  | tee target/tsc.validate.log; exitCode=$?; echo $exitCode; exit $exitCode",
+		"tsc:validate": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true; exitCode=$?; echo $exitCode; exit $exitCode",
 		"tsc:trace": "node_modules/typescript/bin/tsc --project ./tsconfig.json --noEmit true --traceResolution true  | tee target/tsc.trace.log; echo $?",
 		"tsc:listFiles": "node_modules/typescript/bin/tsc --project ./jsconfig.json --noEmit true --listFiles  | tee target/tsc.listFiles.log; echo $?",
 		"test": "yarn run _lint && yarn run tsc:validate && yarn run test:once",

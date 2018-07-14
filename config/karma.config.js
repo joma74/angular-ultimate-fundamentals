@@ -16,6 +16,14 @@ module.exports = function(config) {
 		browsers: ["Chrome"],
 		colors: true,
 
+		// @ts-ignore
+		customLaunchers: {
+			Chrome_travis_ci: {
+				base: "Chrome",
+				flags: ["--no-sandbox"],
+			},
+		},
+
 		frameworks: ["jasmine"],
 
 		// @ts-ignore
@@ -48,6 +56,10 @@ module.exports = function(config) {
 		port: 9876,
 		reporters: ["progress", "kjhtml"],
 		singleRun: true,
+	}
+
+	if (process.env.TRAVIS) {
+		_config.browsers = ["Chrome_travis_ci"]
 	}
 
 	config.set(_config)
