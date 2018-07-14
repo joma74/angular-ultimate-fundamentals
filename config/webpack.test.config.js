@@ -27,6 +27,12 @@ const webpackConfig = {
 				use: "null-loader",
 			},
 			{
+				exclude: /node_modules/,
+				include: helpers.root("src", "app"),
+				loaders: ["raw-loader", "sass-loader"], // sass-loader not scss-loader
+				test: /\.scss$/,
+			},
+			{
 				exclude: helpers.root("src", "app"),
 				test: /\.css$/,
 				use: "null-loader",
