@@ -17,7 +17,8 @@
 		"test:once": "karma start karma.config.js",
 		"test:watch": "karma start karma.config.js --auto-watch --no-single-run",
 		"dev": "webpack-dev-server --inline --progress --port 8080",
-		"build": "rimraf dist && webpack --config config/webpack.prod.config.js --progress --profile --bail"
+		"build": "rimraf dist && webpack --config config/webpack.prod.config.js --progress --profile --bail",
+		"postinstall": "patch -N -p0  <patches/patch.index.d.ts.webpack.types"
 	},
 	"resolutions": {
 		"**/@types/webpack": "~3"
