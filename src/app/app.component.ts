@@ -10,10 +10,7 @@ import "../assets/css/styles.css"
 export class AppComponent {
 	public name: string = "Jo"
 
-	public handleClick(event: any) {
-		this.name = "Jo"
-	}
-	public handleChange(value: string) {
+	public handleClick(value: string) {
 		this.name = value
 	}
 }
