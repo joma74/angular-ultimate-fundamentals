@@ -10,3 +10,8 @@ before_install:
 
 addons:
   chrome: stable
+
+notifications:
+  email:
+    recipients:
+      - dev-mails@gmx.net
