@@ -1,5 +1,4 @@
 <main>
-    <button (click)="handleClick(username.value)">Get value</button>
-    <input type="text" #username>
+    <input type="text" [value]="name" (input)="handleChange($event.target.value)">
     <div>Hello {{ name }}</div>
 </main>

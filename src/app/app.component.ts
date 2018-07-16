@@ -9,8 +9,7 @@ import "../assets/css/styles.css"
 })
 export class AppComponent {
 	public name: string = "Jo"
-
-	public handleClick(value: string) {
+	public handleChange(value: string) {
 		this.name = value
 	}
 }
