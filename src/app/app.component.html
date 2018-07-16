@@ -1,4 +1,16 @@
 <main>
     <input type="text" [value]="name" (input)="handleChange($event.target.value)">
     <div>Hello {{ name }}</div>
+    <div>
+        <h3>Airline Passengers</h3>
+        <ul>
+            <ng-template ngFor let-i="index" let-passenger [ngForOf]="passengers">
+                <li>{{ i }}: {{ passenger.fullName }}</li>
+            </ng-template>
+        </ul>
+        <h3>Airline Passengers</h3>
+        <ul>
+            <li *ngFor="let passenger of passengers; let i = index">{{ i }}: {{ passenger.fullName }}</li>
+        </ul>
+    </div>
 </main>
