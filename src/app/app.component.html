@@ -4,13 +4,10 @@
     <div>
         <h3>Airline Passengers</h3>
         <ul>
-            <ng-template ngFor let-i="index" let-passenger [ngForOf]="passengers">
-                <li>{{ i }}: {{ passenger.fullName }}</li>
-            </ng-template>
-        </ul>
-        <h3>Airline Passengers</h3>
-        <ul>
-            <li *ngFor="let passenger of passengers; let i = index">{{ i }}: {{ passenger.fullName }}</li>
+            <li *ngFor="let passenger of passengers; let i = index">
+                <span class="status" [class.checked-in]="passenger.checkedIn"></span>
+                <span class="status" [ngClass]="{ 'checked-in' : passenger.checkedIn, 'checked-out' : !passenger.checkedIn }"></span>                {{ i }}: {{ passenger.fullName }}
+            </li>
         </ul>
     </div>
 </main>

@@ -22,7 +22,7 @@ export class AppComponent {
 			id: 1,
 		},
 		{
-			checkedIn: false,
+			checkedIn: true,
 			fullName: "Stephen",
 			id: 2,
 		},
