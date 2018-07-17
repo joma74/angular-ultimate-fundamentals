@@ -1,12 +1,30 @@
 <main>
-    <input type="text" [value]="name" (input)="handleChange($event.target.value)">
+    <input
+        type="text"
+        [value]="name"
+        (input)="handleChange($event.target.value)"
+    >
     <div>Hello {{ name }}</div>
     <div>
         <h3>Airline Passengers</h3>
         <ul>
             <li *ngFor="let passenger of passengers; let i = index">
-                <span class="status" [class.checked-in]="passenger.checkedIn"></span>
-                <span class="status" [ngClass]="{ 'checked-in' : passenger.checkedIn, 'checked-out' : !passenger.checkedIn }"></span>                {{ i }}: {{ passenger.fullName }}
+                <span
+                    class="status"
+                    [class.checked-in]="passenger.checkedIn"
+                ></span>
+                <span
+                    class="status"
+                    [ngClass]="{ 'checked-in' : passenger.checkedIn, 'checked-out' : !passenger.checkedIn }"
+                ></span>
+                <span
+                    class="status"
+                    [style.backgroundColor]="( passenger.checkedIn ? '#2ecc71' : '#c0392b' )"
+                ></span>
+                <span
+                    class="status"
+                    [ngStyle]="{ backgroundColor: ( passenger.checkedIn ? '#2ecc71' : '#c0392b' )}"
+                ></span> {{ i }}: {{ passenger.fullName }}
             </li>
         </ul>
     </div>
