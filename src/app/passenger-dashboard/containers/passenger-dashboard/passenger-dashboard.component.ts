@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { IChild, IPassenger } from "../../models/passenger.interface"
 
 @Component({
@@ -33,21 +33,24 @@ import { IChild, IPassenger } from "../../models/passenger.interface"
 		</div>
 			`,
 })
-export class PassengerDashboardComponent {
-	public passengers: IPassenger[] = [
-		{
-			checkInDate: null,
-			checkedIn: false,
-			children: [{ name: "Ted", age: 13 }, { name: "Alice", age: 18 }],
-			fullName: "Rose",
-			id: 1,
-		},
-		{
-			checkInDate: 149160600000,
-			checkedIn: true,
-			children: null,
-			fullName: "Stephen",
-			id: 2,
-		},
-	]
+export class PassengerDashboardComponent implements OnInit {
+	public passengers: IPassenger[]
+	ngOnInit(): void {
+		this.passengers = [
+			{
+				checkInDate: null,
+				checkedIn: false,
+				children: [{ name: "Ted", age: 13 }, { name: "Alice", age: 18 }],
+				fullName: "Rose",
+				id: 1,
+			},
+			{
+				checkInDate: 149160600000,
+				checkedIn: true,
+				children: null,
+				fullName: "Stephen",
+				id: 2,
+			},
+		]
+	}
 }
