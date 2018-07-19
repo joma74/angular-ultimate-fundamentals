@@ -42,7 +42,6 @@
 		"no-unexpected-multiline": true,
 		"no-unsafe-finally": true,
 		"no-unused-expression": true,
-		"no-unused-variable": true,
 		"no-multi-spaces": true,
 		"no-var-keyword": true,
 		"object-curly-spacing": [true, "always"],
