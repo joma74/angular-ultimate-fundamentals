@@ -1,11 +1,13 @@
 import { Component, OnInit } from "@angular/core"
-import { IChild, IPassenger } from "../../models/passenger.interface"
+import { IPassenger } from "../../models/passenger.interface"
 
 @Component({
 	selector: "passenger-dashboard",
 	styleUrls: ["passenger-dashboard.component.scss"],
 	template: `
 		<div>
+			<passenger-count></passenger-count>
+			<passenger-detail></passenger-detail>
 			<h3>Airline Passengers</h3>
 			<ul>
 				<li *ngFor="let passenger of passengers; let i = index">
@@ -35,7 +37,7 @@ import { IChild, IPassenger } from "../../models/passenger.interface"
 })
 export class PassengerDashboardComponent implements OnInit {
 	public passengers: IPassenger[]
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		this.passengers = [
 			{
 				checkInDate: null,
