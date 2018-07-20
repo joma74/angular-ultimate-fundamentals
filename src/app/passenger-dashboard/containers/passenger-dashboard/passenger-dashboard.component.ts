@@ -3,37 +3,14 @@ import { IPassenger } from "../../models/passenger.interface"
 
 @Component({
 	selector: "passenger-dashboard",
-	styleUrls: ["passenger-dashboard.component.scss"],
 	template: `
 		<div>
 			<passenger-count
 				[items]="passengers">
 			</passenger-count>
-			<passenger-detail></passenger-detail>
-			<h3>Airline Passengers</h3>
-			<ul>
-				<li *ngFor="let passenger of passengers; let i = index">
-					<span
-						class="status"
-						[class.checked-in]="passenger.checkedIn"
-					></span>
-					<span
-						class="status"
-						[ngClass]="{ 'checked-in' : passenger.checkedIn, 'checked-out' : !passenger.checkedIn }"
-					></span>
-					<span
-						class="status"
-						[style.backgroundColor]="( passenger.checkedIn ? '#2ecc71' : '#c0392b' )"
-					></span>
-					<span
-						class="status"
-						[ngStyle]="{ backgroundColor: ( passenger.checkedIn ? '#2ecc71' : '#c0392b' )}"
-					></span> {{ i }}: {{ passenger.fullName }}
-					<p>{{ passenger | json }}</p>
-					<div class="date">Check in date: {{ passenger.checkInDate ? (passenger.checkInDate | date: 'yMMMMd' | uppercase ) : "Not checked in" }}</div>
-					<div class="children">Children: {{ passenger.children?.length || 0 }}</div>
-				</li>
-			</ul>
+			<passenger-detail *ngFor="let passenger of passengers;"
+				[detail]="passenger">
+			</passenger-detail>
 		</div>
 			`,
 })
