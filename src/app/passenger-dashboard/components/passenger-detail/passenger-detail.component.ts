@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core"
+import {
+	Component,
+	OnChanges,
+	EventEmitter,
+	Input,
+	Output,
+} from "@angular/core"
 import { IPassenger } from "../../models/passenger.interface"
 
 @Component({
@@ -12,9 +18,9 @@ import { IPassenger } from "../../models/passenger.interface"
             ></span>
             <div *ngIf="editing">
                 <input type="text" 
-                    [value]="detail.fullName"
-                    (input)="onChangeName(name.value)"
-                    #name
+					[value]="detail.fullName"
+					(input)="onChangeName(name.value)"
+					#name
                 >
             </div>
             <div *ngIf="!editing">{{ detail.fullName }}</div>
@@ -29,7 +35,7 @@ import { IPassenger } from "../../models/passenger.interface"
         </div>
     `,
 })
-export class PassengerDetailComponent {
+export class PassengerDetailComponent implements OnChanges {
 	@Output() //
 	public remove: EventEmitter<any> = new EventEmitter()
 
@@ -39,6 +45,13 @@ export class PassengerDetailComponent {
 	@Input() //
 	public detail: IPassenger
 	public editing: boolean
+
+	public ngOnChanges(changes) {
+		console.log(changes)
+		if (changes.detail) {
+			this.detail = { ...changes.detail.currentValue }
+		}
+	}
 
 	public onChangeName(name: string) {
 		this.detail.fullName = name
