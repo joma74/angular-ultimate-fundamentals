@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core"
 import { PassengerCountComponent } from "./components/passenger-count/passenger-count.component"
 import { PassengerDetailComponent } from "./components/passenger-detail/passenger-detail.component"
 import { PassengerDashboardComponent } from "./containers/passenger-dashboard/passenger-dashboard.component"
+import { PassengerDashboardService } from "./passenger-dashboard.service"
 
 @NgModule({
 	declarations: [
@@ -12,5 +13,6 @@ import { PassengerDashboardComponent } from "./containers/passenger-dashboard/pa
 	],
 	exports: [PassengerDashboardComponent],
 	imports: [CommonModule],
+	providers: [PassengerDashboardService],
 })
 export class PassengerDashboardModule {}
