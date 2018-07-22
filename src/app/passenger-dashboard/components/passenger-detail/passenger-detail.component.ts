@@ -4,6 +4,7 @@ import {
 	Input,
 	OnChanges,
 	Output,
+	SimpleChanges,
 } from "@angular/core"
 import { IPassenger } from "../../models/passenger.interface"
 
@@ -46,7 +47,7 @@ export class PassengerDetailComponent implements OnChanges {
 	public detail: IPassenger
 	public editing: boolean
 
-	public ngOnChanges(changes: any) {
+	public ngOnChanges(changes: SimpleChanges) {
 		if (changes.detail) {
 			this.detail = { ...changes.detail.currentValue }
 		}
