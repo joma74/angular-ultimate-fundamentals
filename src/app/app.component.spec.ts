@@ -1,5 +1,5 @@
 import { TestBed } from "@angular/core/testing"
-
+import { HttpModule } from "@angular/http"
 import { AppComponent } from "./app.component"
 import { PassengerCountComponent } from "./passenger-dashboard/components/passenger-count/passenger-count.component"
 import { PassengerDetailComponent } from "./passenger-dashboard/components/passenger-detail/passenger-detail.component"
@@ -15,6 +15,7 @@ describe("App", () => {
 				PassengerDashboardComponent,
 				PassengerDetailComponent,
 			],
+			imports: [HttpModule],
 			providers: [PassengerDashboardService],
 		})
 	})

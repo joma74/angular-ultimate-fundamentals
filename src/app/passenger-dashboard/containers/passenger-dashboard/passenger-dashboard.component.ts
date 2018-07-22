@@ -31,17 +31,23 @@ export class PassengerDashboardComponent implements OnInit {
 	}
 
 	public handleEdit(event: IPassenger) {
-		this.passengers = this.passengers.map((passenger: IPassenger) => {
-			if (passenger.id === event.id) {
-				passenger = { ...passenger, ...event }
-			}
-			return passenger
-		})
+		this.passengerService
+			.updatePassenger(event)
+			.subscribe((data: IPassenger) => {
+				this.passengers = this.passengers.map((passenger: IPassenger) => {
+					if (passenger.id === data.id) {
+						passenger = { ...passenger, ...event }
+					}
+					return passenger
+				})
+			})
 	}
 
 	public handleRemove(event: IPassenger) {
-		this.passengers = this.passengers.filter((passenger: IPassenger) => {
-			return passenger.id !== event.id
+		this.passengerService.removePassenger(event).subscribe(() => {
+			this.passengers = this.passengers.filter((passenger: IPassenger) => {
+				return passenger.id !== event.id
+			})
 		})
 	}
 }
