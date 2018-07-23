@@ -9,9 +9,14 @@ const PASSENGER_API = "/api/passengers"
 export class PassengerDashboardService {
 	constructor(private http: Http) {}
 	public getPassengers(): Observable<IPassenger[]> {
-		return this.http.get(PASSENGER_API).map((response: Response) => {
-			return response.json()
-		})
+		return this.http
+			.get(PASSENGER_API)
+			.map((response: Response) => {
+				return response.json()
+			})
+			.catch((error: any) => {
+				return Observable.throw(error.json())
+			})
 	}
 
 	public updatePassenger(passenger: IPassenger): Observable<IPassenger> {
