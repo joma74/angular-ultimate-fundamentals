@@ -26,7 +26,6 @@ import { IPassenger } from "../../models/passenger.interface"
             </div>
             <div *ngIf="!editing">{{ detail.fullName }}</div>
             <div class="date">Check in date: {{ detail.checkInDate ? (detail.checkInDate | date: 'yMMMMd' | uppercase ) : "Not checked in" }}</div>
-            <div class="children">Children: {{ detail.children?.length || 0 }}</div>
             <button (click)="toggleEdit()">
                 {{ editing ? 'Done' : 'Edit' }}
             </button>

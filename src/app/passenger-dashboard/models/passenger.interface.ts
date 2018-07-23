@@ -3,10 +3,5 @@ export interface IPassenger {
 	fullName: string
 	checkedIn: boolean
 	checkInDate?: number
-	children?: IChild[]
-}
-
-export interface IChild {
-	name: string
-	age: number
+	baggage: string
 }
