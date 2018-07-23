@@ -7,7 +7,7 @@ import "../assets/css/styles.css"
 	styleUrls: ["./app.component.scss"],
 	template: `
 		<main>
-			<passenger-dashboard></passenger-dashboard>
+			<passenger-viewer></passenger-viewer>
 		</main>
 	`,
 })

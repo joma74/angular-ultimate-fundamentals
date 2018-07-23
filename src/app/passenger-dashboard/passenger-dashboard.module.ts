@@ -4,6 +4,7 @@ import { HttpModule } from "@angular/http"
 import { PassengerCountComponent } from "./components/passenger-count/passenger-count.component"
 import { PassengerDetailComponent } from "./components/passenger-detail/passenger-detail.component"
 import { PassengerDashboardComponent } from "./containers/passenger-dashboard/passenger-dashboard.component"
+import { PassengerViewerComponent } from "./containers/passenger-viewer/passenger-viewer.component"
 import { PassengerDashboardService } from "./passenger-dashboard.service"
 
 @NgModule({
@@ -11,8 +12,9 @@ import { PassengerDashboardService } from "./passenger-dashboard.service"
 		PassengerCountComponent,
 		PassengerDetailComponent,
 		PassengerDashboardComponent,
+		PassengerViewerComponent,
 	],
-	exports: [PassengerDashboardComponent],
+	exports: [PassengerDashboardComponent, PassengerViewerComponent],
 	imports: [CommonModule, HttpModule],
 	providers: [PassengerDashboardService],
 })

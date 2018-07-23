@@ -4,6 +4,7 @@ import { AppComponent } from "./app.component"
 import { PassengerCountComponent } from "./passenger-dashboard/components/passenger-count/passenger-count.component"
 import { PassengerDetailComponent } from "./passenger-dashboard/components/passenger-detail/passenger-detail.component"
 import { PassengerDashboardComponent } from "./passenger-dashboard/containers/passenger-dashboard/passenger-dashboard.component"
+import { PassengerViewerComponent } from "./passenger-dashboard/containers/passenger-viewer/passenger-viewer.component"
 import { PassengerDashboardService } from "./passenger-dashboard/passenger-dashboard.service"
 
 describe("App", () => {
@@ -14,6 +15,7 @@ describe("App", () => {
 				PassengerCountComponent,
 				PassengerDashboardComponent,
 				PassengerDetailComponent,
+				PassengerViewerComponent,
 			],
 			imports: [HttpModule],
 			providers: [PassengerDashboardService],

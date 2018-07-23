@@ -8,6 +8,18 @@ const PASSENGER_API = "/api/passengers"
 @Injectable()
 export class PassengerDashboardService {
 	constructor(private http: Http) {}
+
+	public getPassenger(id: number): Observable<IPassenger> {
+		return this.http
+			.get(`${PASSENGER_API}/${id}`)
+			.map((response: Response) => {
+				return response.json()
+			})
+			.catch((error: any) => {
+				return Observable.throw(error.json())
+			})
+	}
+
 	public getPassengers(): Observable<IPassenger[]> {
 		return this.http
 			.get(PASSENGER_API)
