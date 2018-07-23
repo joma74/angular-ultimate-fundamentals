@@ -1,8 +1,10 @@
 import { TestBed } from "@angular/core/testing"
+import { FormsModule } from "@angular/forms"
 import { HttpModule } from "@angular/http"
 import { AppComponent } from "./app.component"
 import { PassengerCountComponent } from "./passenger-dashboard/components/passenger-count/passenger-count.component"
 import { PassengerDetailComponent } from "./passenger-dashboard/components/passenger-detail/passenger-detail.component"
+import { PassengerFormComponent } from "./passenger-dashboard/components/passenger-form/passenger-form.component"
 import { PassengerDashboardComponent } from "./passenger-dashboard/containers/passenger-dashboard/passenger-dashboard.component"
 import { PassengerViewerComponent } from "./passenger-dashboard/containers/passenger-viewer/passenger-viewer.component"
 import { PassengerDashboardService } from "./passenger-dashboard/passenger-dashboard.service"
@@ -16,8 +18,9 @@ describe("App", () => {
 				PassengerDashboardComponent,
 				PassengerDetailComponent,
 				PassengerViewerComponent,
+				PassengerFormComponent,
 			],
-			imports: [HttpModule],
+			imports: [HttpModule, FormsModule],
 			providers: [PassengerDashboardService],
 		})
 	})
