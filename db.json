@@ -1,7 +1,7 @@
 {
 	"passengers": [
 		{
-			"baggage": "",
+			"baggage": "none",
 			"checkInDate": null,
 			"checkedIn": false,
 			"fullName": "Rose",
