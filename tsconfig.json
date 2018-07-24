@@ -18,6 +18,5 @@
 	},
 	"exclude": ["build", "dist", "node_modules", "target"],
 	"include": ["config/**/*", "src/**/*"],
-	"types": ["types/**/*"],
 	"compileOnSave": false
 }
