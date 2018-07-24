@@ -1,6 +1,5 @@
 const commonConfig = require("./webpack.common.config")
 const helpers = require("./helpers")
-// @ts-ignore
 const jsonServer = require("json-server")
 const path = require("path")
 const webpack = require("webpack")
@@ -20,7 +19,6 @@ const publicPath = "/"
  */
 const devServer = {
 	before(app) {
-		// @ts-ignore
 		app.use("/api", jsonServer.router(cpd + "/db.json"))
 	},
 	clientLogLevel: "warning",
