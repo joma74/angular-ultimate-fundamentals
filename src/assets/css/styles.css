@@ -1,4 +1,10 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@tailwind utilities;
+
 body {
-  background: #0147a7;
-  color: #fff;
+	background: #0147a7;
+	color: #fff;
 }

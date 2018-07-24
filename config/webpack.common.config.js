@@ -54,11 +54,25 @@ const webpackConfig = {
 				test: /\.scss$/,
 			},
 			{
-				exclude: helpers.root("src", "app"),
+				exclude: /node_modules/,
+				include: helpers.root("src", "app"),
 				test: /\.css$/,
 				use: ExtractTextPlugin.extract({
 					fallback: "style-loader",
-					use: "css-loader?sourceMap",
+					use: [
+						{
+							loader: "style-loader",
+						},
+						{
+							loader: "css-loader",
+							options: {
+								importLoaders: 1,
+							},
+						},
+						{
+							loader: "postcss-loader",
+						},
+					],
 				}),
 			},
 			{
