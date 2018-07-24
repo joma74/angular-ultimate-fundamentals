@@ -23,6 +23,7 @@ const devServer = {
 		// @ts-ignore
 		app.use("/api", jsonServer.router(cpd + "/db.json"))
 	},
+	clientLogLevel: "warning",
 	compress: true,
 	contentBase: contentNotFromWebpackIsServedFrom,
 	historyApiFallback: true,
