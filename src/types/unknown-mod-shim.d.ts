@@ -1,4 +1,4 @@
 declare module "*" {
-	var _a: any
+	const _a: any
 	export = _a
 }
