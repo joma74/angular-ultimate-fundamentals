@@ -57,6 +57,12 @@
 		"triple-equals": [true, "allow-null-check"],
 		"semicolon": [true, "never"],
 		"use-isnan": true,
-		"valid-typeof": true
+		"valid-typeof": true,
+		"variable-name": [
+			true,
+			"check-format",
+			"allow-leading-underscore",
+			"allow-pascal-case"
+		]
 	}
 }
