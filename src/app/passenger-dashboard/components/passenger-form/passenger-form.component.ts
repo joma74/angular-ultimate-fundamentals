@@ -6,16 +6,17 @@ import { IPassenger } from "../../models/passenger.interface"
 	selector: "passenger-form",
 	styleUrls: ["passenger-form.component.scss"],
 	template: `
-		<form #form="ngForm" novalidate>
+		<form #form="ngForm" novalidate class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 			{{ detail | json }}
 			<div>
-				Passenger name: 
+				<label class="text-grey-darker text-sm font-bold mb-2">Passenger name: </label>
 				<input 
 					type="text" 
 					name ="fullName"
 					required
 					#fullName="ngModel"
 					[ngModel]="detail?.fullName"
+					class="shadow appearance-none border rounded py-2 px-3 text-grey-darker leading-tight"
 				>
 				<div *ngIf="fullName?.errors?.required && fullName.dirty" 
 					class="error"
@@ -23,13 +24,14 @@ import { IPassenger } from "../../models/passenger.interface"
 				</div>
 			</div>
 			<div>
-				Passenger ID: 
+				<label class="text-grey-darker text-sm font-bold mb-2">Passenger ID: </label>
 				<input 
 					type="number" 
 					name ="id" 
 					required
 					#id="ngModel"
 					[ngModel]="detail?.id"
+					class="shadow appearance-none border rounded py-2 px-3 text-grey-darker leading-tight"
 				>
 				<div *ngIf="id?.errors?.required && id.dirty" 
 					class="error"

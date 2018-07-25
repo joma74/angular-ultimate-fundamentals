@@ -55,22 +55,26 @@ const webpackConfig = {
 			},
 			{
 				exclude: /node_modules/,
-				include: helpers.root("src", "app"),
+				include: helpers.root("src", "assets", "css"),
 				test: /\.css$/,
 				use: ExtractTextPlugin.extract({
 					fallback: "style-loader",
 					use: [
 						{
-							loader: "style-loader",
-						},
-						{
 							loader: "css-loader",
 							options: {
 								importLoaders: 1,
+								localIdentName: "[name]-[local][hash:base64:5]",
+								sourceMap: true,
 							},
 						},
 						{
 							loader: "postcss-loader",
+							options: {
+								config: {
+									path: "./config/",
+								},
+							},
 						},
 					],
 				}),
