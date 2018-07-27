@@ -27,7 +27,7 @@ import { IPassenger } from "../../models/passenger.interface"
 			</div>
 			<div class="form-row">
 				<div>
-					<label title="Passenger name">Passenger ID</label>
+					<label title="Passenger ID">Passenger ID</label>
 				</div>
 				<div>
 					<input 
