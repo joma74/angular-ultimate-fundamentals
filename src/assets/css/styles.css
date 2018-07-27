@@ -4,6 +4,42 @@
 
 @tailwind utilities;
 
+form label {
+	@apply block truncate whitespace-no-wrap text-blue-darkest text-sm font-bold;
+}
+
+.form-row {
+	@apply flex items-center mb-6;
+}
+
+.form-row > div {
+	@apply w-1/3 text-right pr-4;
+}
+
+.form-row > div:nth-of-type(2) {
+	@apply w-2/3;
+}
+
+form {
+	@apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+}
+
+form input[type="number"] {
+	@apply w-full appearance-none border rounded py-2 px-3 text-grey-darker leading-tight;
+}
+
+form input[type="text"] {
+	@apply w-full appearance-none border rounded py-2 px-3 text-grey-darker leading-tight;
+}
+
+form input[type="checkbox"] {
+	@apply border rounded py-2 px-3 text-grey-darker leading-tight;
+}
+
+form select {
+	@apply block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-2 px-3 rounded leading-tight;
+}
+
 body {
 	background: #0147a7;
 }

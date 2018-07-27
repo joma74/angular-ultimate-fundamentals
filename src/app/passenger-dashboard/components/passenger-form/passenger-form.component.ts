@@ -6,74 +6,95 @@ import { IPassenger } from "../../models/passenger.interface"
 	selector: "passenger-form",
 	styleUrls: ["passenger-form.component.scss"],
 	template: `
-		<form #form="ngForm" novalidate class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+		<form #form="ngForm" novalidate>
 			{{ detail | json }}
-			<div>
-				<label class="text-grey-darker text-sm font-bold mb-2">Passenger name: </label>
-				<input 
-					type="text" 
-					name ="fullName"
-					required
-					#fullName="ngModel"
-					[ngModel]="detail?.fullName"
-					class="shadow appearance-none border rounded py-2 px-3 text-grey-darker leading-tight"
-				>
-				<div *ngIf="fullName?.errors?.required && fullName.dirty" 
-					class="error"
-				>Passenger name is required
+			<div class="form-row">
+				<div>
+					<label title="Passenger name">Passenger name</label>
+				</div>
+				<div>
+					<input 
+						type="text" 
+						name ="fullName"
+						required
+						#fullName="ngModel"
+						[ngModel]="detail?.fullName"
+					>
+					<div *ngIf="fullName?.errors?.required && fullName.dirty" 
+						class="error"
+					>Passenger name is required
+					</div>
 				</div>
 			</div>
-			<div>
-				<label class="text-grey-darker text-sm font-bold mb-2">Passenger ID: </label>
-				<input 
-					type="number" 
-					name ="id" 
-					required
-					#id="ngModel"
-					[ngModel]="detail?.id"
-					class="shadow appearance-none border rounded py-2 px-3 text-grey-darker leading-tight"
-				>
-				<div *ngIf="id?.errors?.required && id.dirty" 
-					class="error"
-				>Passenger ID is required
+			<div class="form-row">
+				<div>
+					<label title="Passenger name">Passenger ID</label>
+				</div>
+				<div>
+					<input 
+						type="number"
+						name ="id" 
+						required
+						#id="ngModel"
+						[ngModel]="detail?.id"
+					>
+					<div *ngIf="id?.errors?.required && id.dirty" 
+						class="error"
+					>Passenger ID is required
+					</div>
 				</div>
 			</div>
-			<div>
-				Checked in:
-				<label>
+			<div class="form-row">
+				<div>
+					<label>Checked in</label>
+				</div>
+				<div class="flex items-center">
 					<input 
 						type="checkbox" 
 						name="checkedIn" 
 						[ngModel]="detail?.checkedIn"
 						(ngModelChange)="toggleCheckIn($event)"
 					>
-					Yes
-				</label>
+					<label class="pl-2">
+						Yes
+					</label>
+				</div>
 			</div>
-			<div *ngIf="form.value.checkedIn">
-				Check in date:
-				<input 
-					type="number" 
-					[value]="false" 
-					name="checkInDate" 
-					[ngModel]="detail?.checkInDate"
-					(ngModelChange)="toggleCheckIn($event)"
-				>
-			</div>
-			<div>
-				Lagguage:
-				<select 
-					name="baggage"
-					[ngModel]="detail?.baggage"
-				>
-					<option
-						*ngFor="let item of baggage"
-						[value]="item.key"
-						[selected]="item.key"
+			<div *ngIf="form.value.checkedIn" class="form-row">
+				<div>
+					<label>Check in date</label>
+					</div>
+				<div>
+					<input 
+						type="number" 
+						[value]="false" 
+						name="checkInDate" 
+						[ngModel]="detail?.checkInDate"
+						(ngModelChange)="toggleCheckIn($event)"
 					>
-						{{ item.value }}
-					</option>
-				</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div>
+					<label>Lagguage</label>
+				</div>
+				<div class="relative">
+					<select 
+						name="baggage"
+						[ngModel]="detail?.baggage"
+					>
+						<option
+							*ngFor="let item of baggage"
+							[value]="item.key"
+							[selected]="item.key"
+						>
+							{{ item.value }}
+						</option>
+					</select>
+					<div class="pointer-events-none absolute pin-y pin-r flex items-center text-grey-darker">
+						<svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+					</div>
+				</div>
 			</div>
 			<div>{{ form.value | json }}</div>
 			<div>Valid: {{ form.valid | json }}</div>
