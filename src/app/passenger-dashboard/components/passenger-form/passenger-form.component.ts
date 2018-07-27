@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core"
+import { Component, EventEmitter, Input, Output } from "@angular/core"
 import { IBaggage } from "../../models/baggage.interface"
 import { IPassenger } from "../../models/passenger.interface"
 
@@ -6,8 +6,7 @@ import { IPassenger } from "../../models/passenger.interface"
 	selector: "passenger-form",
 	styleUrls: ["passenger-form.component.scss"],
 	template: `
-		<form #form="ngForm" novalidate>
-			{{ detail | json }}
+		<form (ngSubmit)="handleSubmit(form.value, form.valid)" #form="ngForm" novalidate>
 			<div class="form-row">
 				<div>
 					<label title="Passenger name">Passenger name</label>
@@ -96,15 +95,27 @@ import { IPassenger } from "../../models/passenger.interface"
 					</div>
 				</div>
 			</div>
-			<div>{{ form.value | json }}</div>
-			<div>Valid: {{ form.valid | json }}</div>
-			<div>Invalid: {{ form.invalid | json }}</div>
+			<div class="flex items-center">
+				<div class="w-1/3"></div>
+				<div class="w-2/3">
+						<button 
+							type="submit" 
+							class="btn-primary"
+							[disabled]="form.invalid"
+						>
+							Update passenger
+						</button>
+				</div>
+			</div>
 		</form>
 	`,
 })
 export class PassengerFormComponent {
 	@Input() //
 	public detail: IPassenger
+
+	@Output() //
+	public update: EventEmitter<IPassenger> = new EventEmitter<IPassenger>()
 
 	public baggage: IBaggage[] = [
 		{ key: "none", value: "No baggage" },
@@ -116,6 +127,12 @@ export class PassengerFormComponent {
 	public toggleCheckIn(checkedIn: boolean) {
 		if (checkedIn) {
 			this.detail.checkInDate = Date.now()
+		}
+	}
+
+	public handleSubmit(passenger: IPassenger, isValid: boolean) {
+		if (isValid) {
+			this.update.emit(passenger)
 		}
 	}
 }
