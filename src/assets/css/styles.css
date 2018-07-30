@@ -4,6 +4,39 @@
 
 @tailwind utilities;
 
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Navigation */
+
+nav {
+	@apply flex items-center justify-between flex-wrap bg-teal pl-6;
+}
+
+nav > a {
+	@apply pr-6;
+}
+
+nav > div > a {
+	@apply inline-block text-teal-lighter p-6;
+}
+
+nav > div > a:hover {
+	@apply text-white;
+}
+
+nav > div > .link-active {
+	@apply text-white bg-teal-dark;
+}
+
+/**/
+
+main {
+	@apply block p-6;
+}
+
 form label {
 	@apply block truncate whitespace-no-wrap text-blue-darkest text-sm font-bold;
 }
@@ -57,5 +90,5 @@ form select {
 }
 
 body {
-	background: #0147a7;
+	@apply bg-yellow-lightest;
 }
