@@ -7,13 +7,11 @@ import { PassengerDashboardService } from "../../passenger-dashboard.service"
 	selector: "passenger-viewer",
 	styleUrls: ["./passenger-viewer.component.scss"],
 	template: `
-		<div>
-			<passenger-form 
-				[detail]="passenger"
-				(update)="onUpdatePassenger($event)"
-			>
-			</passenger-form>
-		</div>
+		<passenger-form 
+			[detail]="passenger"
+			(update)="onUpdatePassenger($event)"
+		>
+		</passenger-form>
 	`,
 })
 export class PassengerViewerComponent implements OnInit {

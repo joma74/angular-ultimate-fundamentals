@@ -25,10 +25,12 @@ nav > div > a {
 
 nav > div > a:hover {
 	@apply text-white;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 nav > div > .link-active {
 	@apply text-white bg-teal-dark;
+	text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 /**/
@@ -37,12 +39,16 @@ main {
 	@apply block p-6;
 }
 
+form {
+	@apply shadow-md rounded-lg;
+}
+
 form label {
 	@apply block truncate whitespace-no-wrap text-blue-darkest text-sm font-bold;
 }
 
 .form-row {
-	@apply flex items-center mb-6;
+	@apply flex items-center pb-6;
 }
 
 .form-row > div:nth-of-type(1) {
@@ -53,8 +59,17 @@ form label {
 	@apply w-2/3;
 }
 
-form {
-	@apply bg-yellow-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4;
+.form-fields {
+	@apply bg-yellow-lightest px-8 pt-6 pb-3 rounded-t-lg;
+}
+
+.form-actions-outer {
+	@apply bg-yellow-lighter px-8 rounded-b-lg;
+}
+
+.form-actions-inner {
+	@apply border-teal py-8;
+	border-top-width: 1px;
 }
 
 form input[type="number"] {
@@ -70,7 +85,7 @@ form input[type="checkbox"] {
 }
 
 form select {
-	@apply block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-2 px-3 rounded leading-tight;
+	@apply block appearance-none w-full bg-white border border-grey-lighter text-grey-darker py-2 px-3 rounded leading-tight;
 }
 
 .select-dropdown-chevron {
@@ -79,10 +94,16 @@ form select {
 
 .btn-primary {
 	@apply bg-teal text-white font-bold py-2 px-4 rounded;
+	background-image: linear-gradient(
+		to bottom,
+		#4dc0b5 0%,
+		#38a89d 80%,
+		#38a89d 100%
+	);
 }
 
 .btn-primary:hover {
-	@apply bg-teal-dark;
+	background-image: linear-gradient(to bottom, #38a89d 0%, #38a89d 100%);
 }
 
 .btn-primary[disabled] {
