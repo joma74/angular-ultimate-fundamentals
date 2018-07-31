@@ -2,6 +2,12 @@ import { Component } from "@angular/core"
 
 import "../assets/css/styles.css"
 
+interface INav {
+	exact: boolean
+	link: string
+	name: string
+}
+
 @Component({
 	selector: "my-app",
 	styleUrls: ["./app.component.scss"],
@@ -17,22 +23,36 @@ import "../assets/css/styles.css"
 			</div>
 		</a>
 		<div class="flex-grow flex items-center w-auto text-sm">
-			<a 	routerLink="/"
+			<a *ngFor="let item of nav"
+				[routerLink]="item.link"
 				routerLinkActive="link-active"
-				[routerLinkActiveOptions]="{ exact: true }"
+				[routerLinkActiveOptions]="{ exact: item.exact }"
 			>
-				Home
-			</a>
-			<a 	routerLink="/oops"
-				routerLinkActive="link-active" 
-			>
-				404
+				{{ item.name }}
 			</a>
 		</div>
 		</nav>
 		<main>
-			<router-outlet></router-outlet>
+			<router-outlet #o="outlet"></router-outlet>
 		</main>
 	`,
 })
-export class AppComponent {}
+export class AppComponent {
+	public nav: INav[] = [
+		{
+			exact: true,
+			link: "/",
+			name: "Home",
+		},
+		{
+			exact: false,
+			link: "/passengers",
+			name: "Passengers",
+		},
+		{
+			exact: false,
+			link: "/oops",
+			name: "404",
+		},
+	]
+}

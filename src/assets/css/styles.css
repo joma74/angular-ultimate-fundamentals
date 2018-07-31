@@ -54,7 +54,7 @@ form label {
 }
 
 form {
-	@apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
+	@apply bg-yellow-lightest shadow-md rounded px-8 pt-6 pb-8 mb-4;
 }
 
 form input[type="number"] {
@@ -78,11 +78,11 @@ form select {
 }
 
 .btn-primary {
-	@apply bg-blue text-white font-bold py-2 px-4 rounded;
+	@apply bg-teal text-white font-bold py-2 px-4 rounded;
 }
 
 .btn-primary:hover {
-	@apply bg-blue-dark;
+	@apply bg-teal-dark;
 }
 
 .btn-primary[disabled] {

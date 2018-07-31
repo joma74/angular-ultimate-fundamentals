@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core"
+import { ActivatedRoute, Router } from "@angular/router"
 import { IPassenger } from "../../models/passenger.interface"
 import { PassengerDashboardService } from "../../passenger-dashboard.service"
 
@@ -18,12 +19,20 @@ import { PassengerDashboardService } from "../../passenger-dashboard.service"
 export class PassengerViewerComponent implements OnInit {
 	public passenger: IPassenger
 
-	constructor(private passengerService: PassengerDashboardService) {}
+	constructor(
+		private router: Router,
+		private route: ActivatedRoute,
+		private passengerService: PassengerDashboardService,
+	) {}
 
 	public ngOnInit() {
-		this.passengerService.getPassenger(1).subscribe((data: IPassenger) => {
-			this.passenger = data
-		})
+		this.route.params
+			.switchMap((data: IPassenger) => {
+				return this.passengerService.getPassenger(data.id)
+			})
+			.subscribe((data: IPassenger) => {
+				this.passenger = data
+			})
 	}
 
 	public onUpdatePassenger(event: IPassenger) {
