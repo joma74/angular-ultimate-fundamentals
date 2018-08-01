@@ -7,6 +7,7 @@ import { PassengerDashboardService } from "../../passenger-dashboard.service"
 	selector: "passenger-viewer",
 	styleUrls: ["./passenger-viewer.component.scss"],
 	template: `
+		<button (click)="goBack()">&lsaquo; Go Back</button>
 		<passenger-form 
 			[detail]="passenger"
 			(update)="onUpdatePassenger($event)"
@@ -39,5 +40,9 @@ export class PassengerViewerComponent implements OnInit {
 			.subscribe((data: IPassenger) => {
 				this.passenger = { ...this.passenger, ...data }
 			})
+	}
+
+	public goBack() {
+		this.router.navigate(["/passengers"])
 	}
 }
