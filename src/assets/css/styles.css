@@ -15,7 +15,7 @@ nav {
 	@apply flex items-center justify-center flex-wrap bg-teal;
 }
 
-@screen md {
+@screen sm {
 	nav {
 		@apply pl-6 justify-between;
 	}
