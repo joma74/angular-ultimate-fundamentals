@@ -12,11 +12,16 @@ a {
 /* Navigation */
 
 nav {
-	@apply flex items-center justify-between flex-wrap bg-teal pl-6;
+	@apply flex items-center justify-center flex-wrap bg-teal;
 }
 
-nav > a {
-	@apply pr-6;
+@screen md {
+	nav {
+		@apply pl-6 justify-between;
+	}
+	nav > a {
+		@apply pr-6;
+	}
 }
 
 nav > div > a {
@@ -68,8 +73,8 @@ form label {
 }
 
 .form-actions-inner {
-	@apply border-teal py-8;
-	border-top-width: 1px;
+	@apply .border-yellow py-8;
+	border-top-width: 0.25rem;
 }
 
 form input[type="number"] {
@@ -103,7 +108,9 @@ form select {
 }
 
 .btn-primary:hover {
+	@apply shadow-md;
 	background-image: linear-gradient(to bottom, #38a89d 0%, #38a89d 100%);
+	transform: translateY(-1px);
 }
 
 .btn-primary[disabled] {

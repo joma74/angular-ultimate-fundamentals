@@ -36,7 +36,7 @@ interface INav {
 				<span class="font-semibold text-xl tracking-tight" style="text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)">Airline Passenger App</span>
 			</div>
 		</a>
-		<div class="flex-grow flex items-center w-auto text-sm">
+		<div class="flex-grow flex items-center justify-center md:justify-start w-auto text-sm">
 			<a *ngFor="let item of nav"
 				[routerLink]="item.link"
 				routerLinkActive="link-active"
