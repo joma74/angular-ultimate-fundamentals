@@ -99,17 +99,13 @@ form select {
 
 .btn-primary {
 	@apply bg-teal text-white font-bold py-2 px-4 rounded;
-	background-image: linear-gradient(
-		to bottom,
-		#4dc0b5 0%,
-		#38a89d 80%,
-		#38a89d 100%
-	);
+	background: linear-gradient(to bottom, #4dc0b5 0%, #38a89d 80%, #38a89d 100%);
 }
 
 .btn-primary:hover {
 	@apply shadow-md;
-	background-image: linear-gradient(to bottom, #38a89d 0%, #38a89d 100%);
+	background: linear-gradient(to bottom, #38a89d 0%, #38a89d 100%);
+	transition: 0.1s;
 	transform: translateY(-1px);
 }
 
