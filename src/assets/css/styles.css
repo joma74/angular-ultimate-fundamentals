@@ -113,6 +113,16 @@ form select {
 	@apply opacity-50 cursor-not-allowed;
 }
 
+.link-primary {
+	@apply text-teal py-1 px-2;
+}
+
+.link-primary:hover {
+	@apply shadow-md;
+	transition: 0.1s;
+	transform: translateY(-1px);
+}
+
 body {
 	@apply bg-yellow-lightest;
 }
